@@ -1,73 +1,106 @@
-<  <!<!DOCTYPE html>
+<  <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <title>CYZEXX – Trading Analysis</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>CYZEXX</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0b0f;
-      color: #ffffff;
-      text-align: center;
-    }
-    header {
-      padding: 40px 20px;
-      background: linear-gradient(135deg, #111, #1a1a1a);
-    }
-    h1 {
-      color: gold;
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 16px;
-      opacity: 0.9;
-    }
-    .box {
-      margin: 30px auto;
-      max-width: 500px;
-      padding: 20px;
-      background: #15151d;
-      border-radius: 10px;
-    }
-    .usdt {
-      color: #00ff99;
-      font-weight: bold;
-      word-break: break-all;
-    }
-    footer {
-      margin: 40px 0;
-      font-size: 14px;
-      opacity: 0.6;
-    }
-  </style>
+<style>
+body{
+  margin:0;
+  background:#0e0e0e;
+  color:white;
+  font-family:Arial, sans-serif;
+  text-align:center;
+}
+header{
+  padding:20px;
+}
+.menu a{
+  margin:0 15px;
+  color:#00ffcc;
+  text-decoration:none;
+  font-weight:bold;
+  cursor:pointer;
+}
+section{
+  display:none;
+  padding:30px;
+}
+section.active{
+  display:block;
+}
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 25px;
+  background:#00ffcc;
+  color:black;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.wallet{
+  color:#00ff66;
+  word-break:break-all;
+  margin:15px 0;
+}
+.warning{
+  color:#ffcc00;
+}
+footer{
+  margin:40px 0 15px;
+  font-size:12px;
+  color:#aaa;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>CYZEXX</h1>
-    <p>Crypto & Gold Trading Analysis</p>
-  </header>
+<header>
+  <h1 style="color:yellow;">CYZEXX</h1>
+  <p>Crypto & Gold Trading Analysis</p>
 
-  <div class="box">
-    <h2>📊 Bozor tahlillari</h2>
-    <p>Bitcoin, Altcoin va Gold bo‘yicha professional analizlar</p>
+  <div class="menu">
+    <a onclick="showPage('home')">🏠 Bosh sahifa</a>
+    <a onclick="showPage('contact')">💬 Murojaat</a>
+  </div>
+</header>
+
+<!-- BOSH SAHIFA -->
+<section id="home" class="active">
+  <h2>📊 Bozor tahlillari</h2>
+  <p>Bitcoin, Altcoin va Gold bo‘yicha professional analizlar</p>
+
+  <div class="btn" onclick="showPage('contact')">
+    Murojaat qilish
+  </div>
+</section>
+
+<!-- MUROJAAT SAHIFASI -->
+<section id="contact">
+  <h2>💰 Murojaat qilish</h2>
+  <p>1 USDT (TRC20) to‘lov orqali murojaat qilishingiz mumkin</p>
+
+  <div class="wallet">
+    TYjMZZNGunns5norzfzqUHzPCA2HzGc7v2
   </div>
 
-  <div class="box">
-    <h2>💰 Murojaat qilish</h2>
-    <p>1 USDT (TRC20) to‘lov orqali murojaat qilishingiz mumkin</p>
-    <p class="usdt">TYjMZZNGunns5norzfzqUHzPCA2HzGc7v2</p>
-    <p>⚠️ Faqat USDT yuboring</p>
-  </div>
+  <p class="warning">⚠️ Faqat USDT yuboring</p>
+</section>
 
-  <footer>
-    © 2026 CYZEXX
-  </footer>
+<footer>
+  © 2026 CYZEXX
+</footer>
+
+<script>
+function showPage(page){
+  document.querySelectorAll("section").forEach(s=>{
+    s.classList.remove("active");
+  });
+  document.getElementById(page).classList.add("active");
+}
+</script>
 
 </body>
-  </html>
+</html>
